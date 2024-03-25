@@ -31,20 +31,15 @@ function checkName(name) {
 function deleteInvalids(array){
     if(Array.isArray(array)){
         const numArray=[];
-        const othArray=[];
-        let element=0;
         for(let arr of array){
-            if(arr!=='NaN'||arr!=='undefined'){
+            if(typeof(arr)=='number' && isNaN(arr)===false){
                 numArray.push(arr);
-            }else{
-                othArray.push(arr);
             }
         }
         return numArray;
     }else{
-        return "Invalid Array";
+        return "Invalid Array!!! You must provide input as an Array";
     }
 }
-const arrayElement=[10,11,-1,54,NaN,undefined];
-const output=deleteInvalids(arrayElement);
-console.log(output);
+
+//Problem-04:
