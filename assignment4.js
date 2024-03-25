@@ -1,4 +1,3 @@
-//Problem-01
 function calculateMoney(ticketSale) {
     if (typeof (ticketSale) === "number") {
         if (ticketSale >= 0) {
@@ -14,7 +13,7 @@ function calculateMoney(ticketSale) {
         return "Invalid Input!! You must provide number as an input.";
     }
 }
-//Problem-02
+
 function checkName(name) {
     if (typeof (name) === 'string') {
         const len = name.length;
@@ -27,7 +26,7 @@ function checkName(name) {
         return "Invalid";
     }
 }
-//Problem-03
+
 function deleteInvalids(array) {
     if (Array.isArray(array)) {
         const numArray = [];
@@ -42,7 +41,6 @@ function deleteInvalids(array) {
     }
 }
 
-//Problem-04:
 function password(obj) {
     const keyArray = [];
     for (let key in obj) {
@@ -59,7 +57,7 @@ function password(obj) {
         return "Invalid";
     }
 }
-//Problem 05
+
 function monthlySavings(payment, livingCost) {
     if (Array.isArray(payment) === true && typeof (livingCost) === 'number') {
         let totalPayment = 0;
