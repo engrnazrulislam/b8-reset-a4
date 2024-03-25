@@ -28,37 +28,56 @@ function checkName(name) {
     }
 }
 //Problem-03
-function deleteInvalids(array){
-    if(Array.isArray(array)){
-        const numArray=[];
-        for(let arr of array){
-            if(typeof(arr)=='number' && isNaN(arr)===false){
+function deleteInvalids(array) {
+    if (Array.isArray(array)) {
+        const numArray = [];
+        for (let arr of array) {
+            if (typeof (arr) == 'number' && isNaN(arr) === false) {
                 numArray.push(arr);
             }
         }
         return numArray;
-    }else{
+    } else {
         return "Invalid Array!!! You must provide input as an Array";
     }
 }
 
 //Problem-04:
-function password(obj){
-    const keyArray=[];
-    for(let key in obj){
+function password(obj) {
+    const keyArray = [];
+    for (let key in obj) {
         keyArray.push(key);
     }
-    if(keyArray[0]==='name' && keyArray[1]==='birthYear' && keyArray[2]==='siteName'){
-        if(obj[keyArray[1]]<=9999 && obj[keyArray[1]]>=999){
+    if (keyArray[0] === 'name' && keyArray[1] === 'birthYear' && keyArray[2] === 'siteName') {
+        if (obj[keyArray[1]] <= 9999 && obj[keyArray[1]] > 999) {
             return `${obj.siteName}#${obj.name}@${obj.birthYear}`;
         }
-        else{
+        else {
             return "Invalid";
         }
-    }else{
+    } else {
         return "Invalid";
     }
 }
-
-
-
+//Problem 05
+function monthlySavings(payment, livingCost) {
+    if (Array.isArray(payment) === true && typeof (livingCost) === 'number') {
+        let totalPayment = 0;
+        let totalDiscount = 0;
+        for (let pay of payment) {
+            if (pay >= 3000) {
+                totalDiscount = totalDiscount + pay * 0.20;
+            }
+            totalPayment = totalPayment + pay;
+        }
+        const totalCost = livingCost + totalDiscount;
+        const totalSaving = totalPayment - totalCost;
+        if (totalSaving <= 0) {
+            return "earn more";
+        } else {
+            return totalSaving;
+        }
+    }else{
+        return "Invalid Input";
+    }
+}
