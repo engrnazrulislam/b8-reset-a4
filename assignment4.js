@@ -43,3 +43,22 @@ function deleteInvalids(array){
 }
 
 //Problem-04:
+function password(obj){
+    const keyArray=[];
+    for(let key in obj){
+        keyArray.push(key);
+    }
+    if(keyArray[0]==='name' && keyArray[1]==='birthYear' && keyArray[2]==='siteName'){
+        if(obj[keyArray[1]]<=9999 && obj[keyArray[1]]>=999){
+            return `${obj.siteName}#${obj.name}@${obj.birthYear}`;
+        }
+        else{
+            return "Invalid";
+        }
+    }else{
+        return "Invalid";
+    }
+}
+
+
+
